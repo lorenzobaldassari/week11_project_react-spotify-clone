@@ -7,7 +7,14 @@ import Form from "react-bootstrap/Form";
 // import {BsFillHouseDoorFill} from "react-icons/fa"
 import { BsFillHouseDoorFill } from "react-icons/bs";
 import { BsFillMapFill } from "react-icons/bs";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import {  addToSearchAction } from "../redusx/action";
+
 const Sidebar = () => {
+  const [input, setInput] = useState();
+  const dispatch = useDispatch();
+
   return (
     <Navbar bg="primary" data-bs-theme="dark" className="pe-0 mb-0">
       <Container
@@ -32,14 +39,23 @@ const Sidebar = () => {
               </span>
               Your Library
             </p>
-            <Form className="d-flex align-items-center mt-3">
+            <Form
+              onSubmit={(e) => {
+                e.preventDefault();
+                dispatch( addToSearchAction(input));
+              }}
+              className="d-flex align-items-center mt-3"
+            >
               <Form.Group
                 className=" d-flex align-items-center  "
                 controlId="formBasicEmail"
               >
                 <Form.Control
+                  onChange={(e) => {
+                    setInput(e.target.value);
+                  }}
                   type="text"
-                  className="form-control bg-white"
+                  className="form-control bg-white text-dark"
                   placeholder="Search"
                   aria-label="Search"
                   aria-describedby="basic-addon2"

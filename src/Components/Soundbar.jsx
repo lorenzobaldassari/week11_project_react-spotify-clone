@@ -14,7 +14,6 @@ const Soundbar = () => {
   let obj = useSelector((state) => state.stateMusic.content);
   let id = useSelector((state) => state.songId.content);
   const dispatch = useDispatch();
-  const cuore = useSelector((state) => state.stateMusic.content.hearth);
   const check = () => {
     console.log(id);
     console.log(obj.id);
@@ -25,13 +24,14 @@ const Soundbar = () => {
     console.log(a, `a`);
     if (a[0] === obj.id && a !== ``) {
       setOk(true);
-    } else{
-      setOk(false)
+    } else {
+      setOk(false);
     }
   };
 
   useEffect(() => {
     check();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [obj.id, id]);
 
   return (
@@ -43,26 +43,26 @@ const Soundbar = () => {
             <p className="mb-0 text-white">{obj.artist}</p>
           </div>
           <div className="ms-4 ">
-            { ok && (
-            <p
-              onClick={() => {
-                dispatch(removeFromPrefAction(obj.id));
-              }}
-              className="mb-0 text-white"
-            >
-              <BsSuitHeartFill />
-            </p>
-             )} 
-            {ok === false && (
-            <p
-              onClick={() => {
-                dispatch(addToPrefAction(obj.id));
-              }}
-              className="mb-0 text-white"
-            >
-              <BsSuitHeart />
-            </p>
-             )} 
+            {ok && obj.title !== `` && (
+              <p
+                onClick={() => {
+                  dispatch(removeFromPrefAction(obj.id));
+                }}
+                className="mb-0 text-white"
+              >
+                <BsSuitHeartFill />
+              </p>
+            )}
+            {ok === false && obj.title !== `` && (
+              <p
+                onClick={() => {
+                  dispatch(addToPrefAction(obj.id));
+                }}
+                className="mb-0 text-white"
+              >
+                <BsSuitHeart />
+              </p>
+            )}
           </div>
         </div>
         <div className="col-lg-8">

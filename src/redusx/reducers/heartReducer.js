@@ -1,4 +1,4 @@
-import { ADD_TO_PERF, PLAY_MUSIC, REMOVE_FROM_PREF } from "../action";
+import { ADD_TO_PERF, REMOVE_FROM_PREF } from "../action";
 
 const initialState = {
   content: []

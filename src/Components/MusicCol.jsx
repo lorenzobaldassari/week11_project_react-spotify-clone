@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import { Col } from "react-bootstrap";
 import Card from "react-bootstrap/Card";
 import { setPlayMusicAction } from "../redusx/action";
-import { useDispatch, useSelector } from "react-redux";
+
+import { useDispatch } from "react-redux";
 
 const MusicCol = (props) => {
+ 
   const [musicArray, setMusicArray] = useState([]);
   const dispatch = useDispatch();
 
@@ -36,6 +38,7 @@ const MusicCol = (props) => {
 
   useEffect(() => {
     handleSection(props.artist);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return musicArray.slice(0, 4).map((elem) => {
