@@ -9,7 +9,8 @@ import { BsFillHouseDoorFill } from "react-icons/bs";
 import { BsFillMapFill } from "react-icons/bs";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import {  addToSearchAction } from "../redusx/action";
+import { addToSearchAction } from "../redusx/action";
+import FavoutireList from "./FavouriteList";
 
 const Sidebar = () => {
   const [input, setInput] = useState();
@@ -42,7 +43,7 @@ const Sidebar = () => {
             <Form
               onSubmit={(e) => {
                 e.preventDefault();
-                dispatch( addToSearchAction(input));
+                dispatch(addToSearchAction(input));
               }}
               className="d-flex align-items-center mt-3"
             >
@@ -70,6 +71,10 @@ const Sidebar = () => {
               </Button>
             </Form>
           </Nav>
+        </div>
+        <div className="d-flex flex-column justify-content-satrt flex-grow-1 mt-3">
+
+        <FavoutireList />
         </div>
         <div className="d-flex flex-column align-itmes-center">
           <Button variant="third" className=" signup-btn">

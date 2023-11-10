@@ -20,7 +20,7 @@ function App() {
             </Col>
 
             <Col
-              className="col-12 col-lg-10 ps-0 mainPage position-relative  "
+              className="col-12 col-lg-10 ps-0 mainPage position-relative "
               id="mainsection"
             >
               <CustomNavbar />

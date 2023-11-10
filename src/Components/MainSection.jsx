@@ -22,7 +22,7 @@ const MainSection = () => {
   }, [searchQuery]);
 
   return (
-    <Container className="w-80">
+    <Container className="w-80 mbottom">
       <Row>
         {ok && <h2 className="text-white">search Results</h2>}
 

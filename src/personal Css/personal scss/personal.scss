@@ -157,3 +157,15 @@ overflow-y: scroll;
 .h-1001{
 height:38px !important;
 }
+.list-decoration-none{
+list-style: none;
+}
+.mbottom{
+  margin-bottom: 10em !important;
+}
+.truncate-1{
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

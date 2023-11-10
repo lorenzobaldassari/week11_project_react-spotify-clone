@@ -7,7 +7,12 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BsSuitHeart } from "react-icons/bs";
 import { BsSuitHeartFill } from "react-icons/bs";
-import { addToPrefAction, removeFromPrefAction } from "../redusx/action";
+import {
+  addToFavouritesAction,
+  addToPrefAction,
+  removeFromFavouritesAction,
+  removeFromPrefAction,
+} from "../redusx/action";
 
 const Soundbar = () => {
   let [ok, setOk] = useState(true);
@@ -15,13 +20,11 @@ const Soundbar = () => {
   let id = useSelector((state) => state.songId.content);
   const dispatch = useDispatch();
   const check = () => {
-    console.log(id);
-    console.log(obj.id);
     let a;
     a = id.filter((elem) => {
       return elem === obj.id;
     });
-    console.log(a, `a`);
+
     if (a[0] === obj.id && a !== ``) {
       setOk(true);
     } else {
@@ -31,7 +34,7 @@ const Soundbar = () => {
 
   useEffect(() => {
     check();
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [obj.id, id]);
 
   return (
@@ -46,6 +49,7 @@ const Soundbar = () => {
             {ok && obj.title !== `` && (
               <p
                 onClick={() => {
+                  dispatch(removeFromFavouritesAction(obj.id));
                   dispatch(removeFromPrefAction(obj.id));
                 }}
                 className="mb-0 text-white"
@@ -56,6 +60,11 @@ const Soundbar = () => {
             {ok === false && obj.title !== `` && (
               <p
                 onClick={() => {
+                  dispatch(
+                    addToFavouritesAction({
+                      obj,
+                    })
+                  );
                   dispatch(addToPrefAction(obj.id));
                 }}
                 className="mb-0 text-white"
