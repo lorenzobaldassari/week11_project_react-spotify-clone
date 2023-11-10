@@ -1,0 +1,159 @@
+@import './scss/Custom/custom_bootstrap.scss';  
+
+
+body{
+  overflow-y: hidden;
+}
+
+@media screen and (max-width: 992px) {
+    #sidebar {
+      display: none !important;
+    }
+    #navbar {
+      display: none !important;
+    }
+
+  }
+// @media screen and (max-width: 768px) {
+//     #navbar {
+//       display: none !important;
+//     }
+//   }
+
+  #leftbar{
+    min-height: 100vh !important;
+  
+  }
+  #sidebar{
+    z-index: 50;
+    position: relative;
+   
+  }
+
+  h2{
+    color: blue
+  }
+
+  .mainPage img {
+    width: 200px;
+  }
+.radious{
+  border-radius:10px 0px 0px 10px !important;
+}
+
+.size{
+  font-size: 0.7em !important;
+}
+.background-zero{
+min-height: 100vh !important;
+  background: linear-gradient(90deg, rgba(62,84,117,1) 0%, rgba(38,52,72,1) 57%, rgba(16,23,31,1) 100%) !important;
+}
+
+#mainsection{
+max-height: 100vh;
+overflow-y: scroll;
+
+&::-webkit-scrollbar {
+  z-index: 800;
+  width: 15px;
+  visibility: hidden;
+  //  background: linear-gradient(#242424 10% , rgb(13, 13, 13) 95%) !important;
+  background: rgba($color: #000000, $alpha: 0);
+  &:hover {
+    z-index: 800;
+    visibility: visible;
+  }
+}
+
+&::-webkit-scrollbar-thumb {
+  z-index: 800;
+  background: rgba(146, 146, 146, 0.651);
+  visibility: hidden;
+  border-radius: 40px;
+  width: 50px;
+  &:hover {
+    z-index: 800;
+    visibility: visible;
+  }
+}
+
+  }
+
+
+
+.bg-none1{
+  background-color: rgba($color: #000000, $alpha: 0.0);
+}
+
+.little{
+  font-size: 0.7em !important;
+}
+.mt-10{
+    margin-top: 4em;
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  z-index: 0;
+  margin-right: 20px;
+}
+.bg-container {
+  height: 5.5rem;
+  background-color: #282828;
+}
+
+.playerControls div {
+  justify-content: space-between;
+}
+
+.playerControls div:first-of-type {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.playerControls a img {
+  width: 14px;
+  margin-top: 1rem;
+  filter: brightness(60%);
+}
+
+.playerControls a:hover {
+  filter: brightness(80%);
+  color: #282828 !important;
+}
+.progress {
+  color: white;
+  background-color: #414141;
+  height: 3px;
+}
+
+
+.login-btn {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+  border-radius: 20px;
+  width: 180px;
+  margin-bottom: 20px;
+}
+.login-btn:hover {
+  color: black;
+  background-color: white;
+}
+.signup-btn {
+  background-color: white;
+  color: black;
+  border: 1px solid white;
+  border-radius: 20px;
+  width: 180px;
+  margin-bottom: 20px;
+}
+
+.signup-btn:hover {
+  color: white;
+  background-color: rgb(60, 211, 60);
+  border: 1px solid rgb(60, 211, 60);
+}
+.h-1001{
+height:38px !important;
+}
