@@ -53,7 +53,7 @@ const Soundbar = () => {
               <BsSuitHeartFill />
             </p>
              )} 
-            {/* {cuore === false && ( */}
+            {ok === false && (
             <p
               onClick={() => {
                 dispatch(addToPrefAction(obj.id));
@@ -62,7 +62,7 @@ const Soundbar = () => {
             >
               <BsSuitHeart />
             </p>
-            {/* )} */}
+             )} 
           </div>
         </div>
         <div className="col-lg-8">
